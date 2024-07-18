@@ -1,5 +1,4 @@
 using System.Drawing;
-
 namespace TelCo.ColorCoder
 {
     static class ColorMap
