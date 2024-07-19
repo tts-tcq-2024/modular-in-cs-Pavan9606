@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 namespace TelCo.ColorCoder
 {
-    static class ColorCoder
+    static class ColorCoderUtil
     {
         public static ColorPair GetColorFromPairNumber(int pairNumber)
         {
@@ -10,11 +10,8 @@ namespace TelCo.ColorCoder
             int zeroBasedPairNumber = pairNumber - 1;
             int majorIndex = zeroBasedPairNumber / ColorMap.colorMapMinor.Length;
             int minorIndex = zeroBasedPairNumber % ColorMap.colorMapMinor.Length;
-            return new ColorPair()
-            {
-                majorColor = ColorMap.colorMapMajor[majorIndex],
-                minorColor = ColorMap.colorMapMinor[minorIndex]
-            };
+            return new ColorPair(ColorMap.colorMapMajor[majorIndex], ColorMap.colorMapMinor[minorIndex]);
+           
         }
         private static void ValidatePairNumber(int pairNumber)
         {
